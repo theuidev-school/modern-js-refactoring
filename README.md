@@ -8,4 +8,3 @@
 - [x] Classes
 - [x] async-await
 - [x] Object literals
-- [-] Exponentiation operator
