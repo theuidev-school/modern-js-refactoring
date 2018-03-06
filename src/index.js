@@ -1,20 +1,7 @@
-import '@babel/polyfill';
-import { StockSymbol } from './core/symbol';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-const symbols = [
-    'aapl',
-    'msft',
-    'goog',
-    'ibm',
-    'amzn'
-].map(s => new StockSymbol(s));
-
-symbols.forEach(async (symbol) => {
-    try {
-        const updatedSymbol = await symbol.load();
-        console.log(updatedSymbol);
-    } catch (e) {
-        console.error(`Failed to download: ${symbol}`)
-    }
-});
-
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
